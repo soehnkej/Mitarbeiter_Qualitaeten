@@ -31,8 +31,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 				}
 			}
-
-			this.sContext = "MitarbeiterSet('928828')";
+			
+			//Instance zum ueberschreiben.. 
+			//this.sContext = "MitarbeiterSet('928828')";
 
 			var oPath;
 

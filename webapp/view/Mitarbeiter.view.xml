@@ -14,17 +14,17 @@
 					</Toolbar>
 				</headerToolbar>
 				<items>
-					<ObjectListItem intro="" title="{Vorname}" number="" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false"
+					<ObjectListItem intro="" title="{Vorname} {Nachname}" number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false"
 						press="_onObjectListItemPress1">
 						<attributes>
 							<ObjectAttribute text="Mitarbeiter Nr." active="false" visible="true"/>
-							<ObjectAttribute text="Titel:" active="false" visible="true"/>
+							<ObjectAttribute text="Firma:" active="false" visible="true"/>
 						</attributes>
 						<firstStatus>
 							<ObjectStatus text="{ID}" state="None" visible="true"/>
 						</firstStatus>
 						<secondStatus>
-							<ObjectStatus text="{Titel}" state="None" visible="true"/>
+							<ObjectStatus text="Musterfirma" state="None" visible="true"/>
 						</secondStatus>
 					</ObjectListItem>
 				</items>

@@ -25,13 +25,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 							}
 						}
 					};
-
+					
+					//this.sContext ist der zu dem Zeitpunkt des anklickens ausgewählte Mitarbeiter
 					this.sContext = patternConvert(this.getOwnerComponent().getComponentData().startupParameters);
 
 				}
 			}
 
-			this.sContext = "MitarbeiterSet('928828')";
 
 			var oPath;
 

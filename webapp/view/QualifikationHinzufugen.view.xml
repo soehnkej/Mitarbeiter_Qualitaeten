@@ -2,12 +2,12 @@
 	controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.QualifikationHinzufugen" xmlns="sap.m">
 	<Page showHeader="true" title="Qualifikation hinzufügen" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
 		<content>
-			<ObjectHeader intro="" title="{Vorname}" icon="sap-icon://person-placeholder" number="{ID}" numberUnit="" numberState="None"
+			<ObjectHeader intro="" title="{Vorname} {Nachname}" icon="sap-icon://person-placeholder" number="{ID}" numberUnit="" numberState="None"
 				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
 				<attributes>
 					<ObjectAttribute title="" text="{Titel}" active="false" visible="true"/>
-					<ObjectAttribute title="{Adresse}" text="{Nummer}" active="false" visible="true"/>
-					<ObjectAttribute title="{Postleitzahl}" text="{Ort}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="{Adresse} {Nummer}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="{Postleitzahl} {Ort}" active="false" visible="true"/>
 				</attributes>
 				<statuses/>
 				<markers/>
@@ -16,7 +16,7 @@
 				visible="true" displayInline="false">
 				<items>
 					<RadioButtonGroup id="sap_Responsive_Page_0-content-sap_m_HBox-1550568095056-items-sap_m_RadioButtonGroup-1551080418612" columns="8"
-						selectedIndex="0" valueState="None" width="489px" editable="true" enabled="true" textDirection="Inherit" select="_onRadioButtonGroupSelect">
+						selectedIndex="3" valueState="None" width="489px" editable="true" enabled="true" textDirection="Inherit" select="_onRadioButtonGroupSelect">
 						<buttons>
 							<RadioButton text="Intern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
 							<RadioButton text="Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
