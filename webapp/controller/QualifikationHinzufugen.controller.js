@@ -34,6 +34,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			
 			//Instance zum ueberschreiben.. 
 			//this.sContext = "MitarbeiterSet('928828')";
+			
+			//this.Context ist der ausgewählte Mitarbeiter
 
 			var oPath;
 
@@ -47,10 +49,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			this.aRadioButtonGroupIds = ["sap_Responsive_Page_0-content-sap_m_HBox-1550568095056-items-sap_m_RadioButtonGroup-1551080418612"];
 			this.handleRadioButtonGroupsSelectedIndex();
-
+			
 		},
 		handleRadioButtonGroupsSelectedIndex: function () {
 			var that = this;
+			
+			
+			
 			this.aRadioButtonGroupIds.forEach(function (sRadioButtonGroupId) {
 				var oRadioButtonGroup = that.byId(sRadioButtonGroupId);
 				var oButtonsBinding = oRadioButtonGroup ? oRadioButtonGroup.getBinding("buttons") : undefined;
@@ -64,9 +69,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 							oRadioButtonGroup.setSelectedIndex(iSelectedIndex);
 						}
 					});
+					
 				}
 			});
-
 		},
 		_onPageNavButtonPress: function (oEvent) {
 
@@ -135,6 +140,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				return oButtonsBindingInfo.binding.getContexts(oButtonsBindingInfo.startIndex, oButtonsBindingInfo.length).findIndex(function (
 					oButtonContext) {
 					return oButtonContext.getProperty(sTextBindingPath) === sTextValue;
+					console.log(oButtonContext);
 				});
 			} else {
 				// look up index in static items
@@ -170,8 +176,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			// Get the search query, regardless of the triggered event ('query' for the search event, 'newValue' for the liveChange one, 'value' for the liveChange of SelectDialogs).
 			var sQuery = oEvent.getParameter("query") || oEvent.getParameter("newValue") || oEvent.getParameter("value");
 			var sSourceId = oEvent.getSource().getId();
+			
+			
 
 			return new Promise(function (fnResolve) {
+				
+		
 				var aFinalFilters = [];
 
 				var aFilters = [];
@@ -188,7 +198,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery));
 
 				}
-
+				
+		
+				
 				var aFinalFilters = aFilters.length > 0 ? [new sap.ui.model.Filter(aFilters, false)] : [];
 				var oBindingOptions = this.updateBindingOptions(sControlId, {
 					filters: aFinalFilters
@@ -210,7 +222,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					MessageBox.error(err.message);
 				}
 			});
-
 		},
 		updateBindingOptions: function (sCollectionId, oBindingData, sSourceId) {
 			this.mBindingOptions = this.mBindingOptions || {};

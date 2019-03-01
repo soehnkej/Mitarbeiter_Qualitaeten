@@ -43,6 +43,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		onInit: function () {
+			
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("StartingPage").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 			var oView = this.getView();
@@ -59,7 +60,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					}
 				}.bind(this)
 			});
-
+			
+			
 		}
 	});
 }, /* bExport= */ true);

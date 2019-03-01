@@ -1,8 +1,10 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.StartingPage"
-	xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+		  controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.StartingPage"
+	      xmlns="sap.m">
 	<Page showHeader="true" title="Starting page" showFooter="true" showNavButton="false">
 		<content>
 			<Image src="/webapp/resources/160121_smart-templates-overview_04.png" height="576px" width="1280px" visible="true" densityAware="false"/>
+			
 		</content>
 		<footer>
 			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">

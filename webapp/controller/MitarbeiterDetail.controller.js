@@ -1,13 +1,17 @@
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
-	"sap/ui/core/routing/History"
+	"sap/ui/core/routing/History",
+	"sap/ui/model/json/JSONModel"
 ], function (BaseController, MessageBox, Utilities, History) {
 	"use strict";
-
+	
 	return BaseController.extend("com.sap.build.zeitconsulting.prototypePlaceholderName.controller.MitarbeiterDetail", {
+		
 		handleRouteMatched: function (oEvent) {
 			var sAppId = "App5c627a341ab5167ccc108c81";
+			
+		
 
 			var oParams = {};
 
