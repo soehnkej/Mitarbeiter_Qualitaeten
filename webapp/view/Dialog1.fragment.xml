@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.Dialog1"
+	xmlns="sap.m">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Title" type="Standard" verticalScrolling="true">
+		<content>
+			<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<ComboBox selectedKey="Qualifikation" editable="true" enabled="true" visible="true" width="358.40625px" valueState="None" maxWidth="100%">
+						<items>
+							<core:Item text="Item" enabled="true" key="Item"/>
+							<core:Item text="Item" enabled="true" key="Item"/>
+							<core:Item text="Item" enabled="true" key="Item"/>
+						</items>
+					</ComboBox>
+				</items>
+				<layoutData/>
+			</HBox>
+			<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<Input value="Gültig von" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+					<Input value="Gültig bis" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+				</items>
+				<layoutData/>
+			</HBox>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+			<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

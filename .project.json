@@ -1,0 +1,25 @@
+{
+	"dataBinding": {
+		"/webapp/view/StartingPage.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/Mitarbeiter.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/QualifikationHinzufugen.view.xml": {
+			"entitySet": "/MitarbeiterSet"
+		},
+		"/webapp/view/MitarbeiterDetail.view.xml": {
+			"entitySet": "/MitarbeiterSet"
+		},
+		"/webapp/view/QualiDialog.view.xml": {
+			"entitySet": "/QualifikationSet"
+		},
+		"/webapp/view/Dialog4.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/Dialog1.view.xml": {
+			"entitySet": ""
+		}
+	}
+}

@@ -1,0 +1,57 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.MitarbeiterDetail"
+	xmlns="sap.m" xmlns:layout="sap.ui.layout">
+	<Page title="" showHeader="true" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+		<content>
+			<ObjectHeader intro="" title="{Vorname}" icon="sap-icon://person-placeholder" number="{ID}" numberUnit="" numberState="None"
+				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
+				<attributes>
+					<ObjectAttribute title="" text="{Titel}" active="false" visible="true"/>
+					<ObjectAttribute title="{Adresse}" text="{Nummer}" active="false" visible="true"/>
+					<ObjectAttribute title="{Postleitzahl}" text="{Ort}" active="false" visible="true"/>
+				</attributes>
+				<statuses/>
+				<markers/>
+			</ObjectHeader>
+			<List id="sap_IconTabBar_Page_0-content-sap_m_ObjectList-1549961427799-9rcfkv91abxasg9ckj7q6kk95_S5" mode="SingleSelectMaster"
+				width="955.00000000px" headerText="Qualifikationen" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
+				growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path:'/Mit_QualSet', templateShareable:true}">
+				<infoToolbar>
+					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+						<content>
+							<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar/>
+				<items>
+					<ObjectListItem intro="" title="{Qual_ID}" icon="" number="{Qual_ID}" numberUnit="" numberState="None" type="Active" selected="false"
+						showMarkers="false">
+						<attributes>
+							<ObjectAttribute title="Ablaufdatum" text="" active="false" visible="true"/>
+							<ObjectAttribute text="Allgemeine Haltbarkeit" active="false" visible="true"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus title="" text="23. April 2022" state="None" visible="true"/>
+						</firstStatus>
+						<secondStatus>
+							<ObjectStatus title="Jahre" text="3 Jahre" state="None" visible="true"/>
+						</secondStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+			<layout:VerticalLayout width="100%" visible="true">
+				<layout:content/>
+			</layout:VerticalLayout>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+	</Page>
+</mvc:View>

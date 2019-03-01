@@ -1,0 +1,87 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="231c1014e16acb0611254a5d" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="231c1014e16acb0611254a5d_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="MitarbeiterSet" EntityType="231c1014e16acb0611254a5d.Mitarbeiter" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<AssociationSet Name="MitarbeiterRelationNameMit_Qual" Association="231c1014e16acb0611254a5d.MitarbeiterRelationNameMit_Qual"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="MitarbeiterSet" Role="FromRole_MitarbeiterRelationNameMit_Qual"/>
+					<End EntitySet="Mit_QualSet" Role="ToRole_MitarbeiterRelationNameMit_Qual"/>
+				</AssociationSet>
+				<EntitySet Name="Mit_QualSet" EntityType="231c1014e16acb0611254a5d.Mit_Qual" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="QualifikationSet" EntityType="231c1014e16acb0611254a5d.Qualifikation" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<AssociationSet Name="QualifikationRelationNameMit_Qual" Association="231c1014e16acb0611254a5d.QualifikationRelationNameMit_Qual"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="QualifikationSet" Role="FromRole_QualifikationRelationNameMit_Qual"/>
+					<End EntitySet="Mit_QualSet" Role="ToRole_QualifikationRelationNameMit_Qual"/>
+				</AssociationSet>
+			</EntityContainer>
+			<EntityType Name="Mitarbeiter" sap:pdm-semantics="business-data">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Vorname" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Vorname"/>
+				<Property Name="Nachname" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nachname"/>
+				<Property Name="Titel" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Titel"/>
+				<Property Name="Adresse" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Adresse"/>
+				<Property Name="Nummer" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nummer"/>
+				<Property Name="Postleitzahl" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Postleitzahl"/>
+				<Property Name="Ort" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Ort"/>
+				<NavigationProperty Name="RelationName" Relationship="231c1014e16acb0611254a5d.MitarbeiterRelationNameMit_Qual"
+					FromRole="FromRole_MitarbeiterRelationNameMit_Qual" ToRole="ToRole_MitarbeiterRelationNameMit_Qual"/>
+			</EntityType>
+			<Association Name="MitarbeiterRelationNameMit_Qual">
+				<End Type="231c1014e16acb0611254a5d.Mitarbeiter" Multiplicity="1" Role="FromRole_MitarbeiterRelationNameMit_Qual"/>
+				<End Type="231c1014e16acb0611254a5d.Mit_Qual" Multiplicity="*" Role="ToRole_MitarbeiterRelationNameMit_Qual"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_MitarbeiterRelationNameMit_Qual">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_MitarbeiterRelationNameMit_Qual">
+						<PropertyRef Name="___FK_e38f0a0bef162061112571eb_00022"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Mit_Qual" sap:pdm-semantics="business-data">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Mit_ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Mit_ID"/>
+				<Property Name="Qual_ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Qual_ID"/>
+				<Property Name="___FK_e38f0a0bef162061112571eb_00022" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_e38f0a0bef162061112571eb_00022"/>
+				<Property Name="___FK_e38f0a0bef162061112571eb_00031" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_e38f0a0bef162061112571eb_00031"/>
+				<Property Name="vonDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="vonDate"/>
+				<Property Name="tillDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="tillDate"/>
+			</EntityType>
+			<EntityType Name="Qualifikation">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Haltbarkeit" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Bezeichnung"/>
+				<Property Name="InEx" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+				<NavigationProperty Name="RelationName" Relationship="231c1014e16acb0611254a5d.QualifikationRelationNameMit_Qual"
+					FromRole="FromRole_QualifikationRelationNameMit_Qual" ToRole="ToRole_QualifikationRelationNameMit_Qual"/>
+			</EntityType>
+			<Association Name="QualifikationRelationNameMit_Qual">
+				<End Type="231c1014e16acb0611254a5d.Qualifikation" Multiplicity="1" Role="FromRole_QualifikationRelationNameMit_Qual"/>
+				<End Type="231c1014e16acb0611254a5d.Mit_Qual" Multiplicity="*" Role="ToRole_QualifikationRelationNameMit_Qual"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_QualifikationRelationNameMit_Qual">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_QualifikationRelationNameMit_Qual">
+						<PropertyRef Name="___FK_e38f0a0bef162061112571eb_00031"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

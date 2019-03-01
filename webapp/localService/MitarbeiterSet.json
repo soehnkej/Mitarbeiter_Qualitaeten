@@ -1,0 +1,46 @@
+[{
+	"ID": "928828",
+	"Vorname": "Max",
+	"Nachname": "Müller",
+	"Titel": "Projektleiter",
+	"Adresse": "Peterstraße",
+	"Nummer": "7",
+	"Postleitzahl": "83247",
+	"Ort": "Aue"
+}, {
+	"ID": "863524",
+	"Vorname": "Sven",
+	"Nachname": "Ulreich",
+	"Titel": "Mitarbeiter",
+	"Adresse": "Auguststraße",
+	"Nummer": "1",
+	"Postleitzahl": "23121",
+	"Ort": "Stuttgart"
+}, {
+	"ID": "546372",
+	"Vorname": "Isabelle",
+	"Nachname": "Janßen",
+	"Titel": "Kranführer",
+	"Adresse": "Peterstraße",
+	"Nummer": "12",
+	"Postleitzahl": "89383",
+	"Ort": "Mainz"
+}, {
+	"ID": "567423",
+	"Vorname": "Manuel",
+	"Nachname": "Neuer",
+	"Titel": "Mitarbeiter",
+	"Adresse": "Neuestraße",
+	"Nummer": "123",
+	"Postleitzahl": "67463",
+	"Ort": "Westerstede"
+}, {
+	"ID": "987242",
+	"Vorname": "Marvin",
+	"Nachname": "Richter",
+	"Titel": "Mitarbeiter",
+	"Adresse": "Winkelstraße",
+	"Nummer": "53",
+	"Postleitzahl": "65545",
+	"Ort": "Köln"
+}]

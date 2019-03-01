@@ -1,0 +1,42 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.Mitarbeiter"
+	xmlns="sap.m">
+	<Page title="Mitarbeiter" showHeader="true" showFooter="true" showNavButton="false" navButtonPress="_onPageNavButtonPress">
+		<content>
+			<List id="sap_List_Page_0-content-sap_m_ObjectList-1" mode="SingleSelectMaster" width="319px" headerText="Header" footerText=""
+				backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true"
+				itemPress="_onObjectListItemPress" items="{path:'/MitarbeiterSet', templateShareable:true}">
+				<infoToolbar/>
+				<headerToolbar>
+					<Toolbar enabled="true" visible="true" width="" design="Solid">
+						<content>
+							<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%" liveChange="_onSearchFieldLiveChange"/>
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<items>
+					<ObjectListItem intro="" title="{Vorname}" number="" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false"
+						press="_onObjectListItemPress1">
+						<attributes>
+							<ObjectAttribute text="Mitarbeiter Nr." active="false" visible="true"/>
+							<ObjectAttribute text="Titel:" active="false" visible="true"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="{ID}" state="None" visible="true"/>
+						</firstStatus>
+						<secondStatus>
+							<ObjectStatus text="{Titel}" state="None" visible="true"/>
+						</secondStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+	</Page>
+</mvc:View>

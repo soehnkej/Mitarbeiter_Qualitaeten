@@ -1,0 +1,13 @@
+[{
+	"ID": "Krankführerschein",
+	"Haltbarkeit": 5,
+	"InEx": "Intern"
+}, {
+	"ID": "Gabelstaplerschein",
+	"Haltbarkeit": 10,
+	"InEx": "Extern"
+}, {
+	"ID": "LKW_Fuehrerschein",
+	"Haltbarkeit": 10,
+	"InEx": "Extern"
+}]

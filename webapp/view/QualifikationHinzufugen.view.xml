@@ -1,0 +1,72 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.QualifikationHinzufugen" xmlns="sap.m">
+	<Page showHeader="true" title="Qualifikation hinzufügen" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+		<content>
+			<ObjectHeader intro="" title="{Vorname}" icon="sap-icon://person-placeholder" number="{ID}" numberUnit="" numberState="None"
+				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
+				<attributes>
+					<ObjectAttribute title="" text="{Titel}" active="false" visible="true"/>
+					<ObjectAttribute title="{Adresse}" text="{Nummer}" active="false" visible="true"/>
+					<ObjectAttribute title="{Postleitzahl}" text="{Ort}" active="false" visible="true"/>
+				</attributes>
+				<statuses/>
+				<markers/>
+			</ObjectHeader>
+			<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="960px" height="54.140625px" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<items>
+					<RadioButtonGroup id="sap_Responsive_Page_0-content-sap_m_HBox-1550568095056-items-sap_m_RadioButtonGroup-1551080418612" columns="8"
+						selectedIndex="0" valueState="None" width="489px" editable="true" enabled="true" textDirection="Inherit" select="_onRadioButtonGroupSelect">
+						<buttons>
+							<RadioButton text="Intern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton text="Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton text="Intern / Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton text="Alle" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+						</buttons>
+					</RadioButtonGroup>
+				</items>
+				<layoutData/>
+			</HBox>
+			<List id="sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299" mode="SingleSelectMaster" width="100%" headerText="Header"
+				footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true"
+				itemPress="_onObjectListItemPress" items="{path:'/QualifikationSet', templateShareable:true}">
+				<infoToolbar>
+					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+						<content>
+							<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar>
+					<Toolbar enabled="true" visible="true" width="" design="Solid">
+						<content>
+							<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%" liveChange="_onSearchFieldLiveChange"/>
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<items>
+					<ObjectListItem intro="" title="{ID}" number="{InEx}" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false">
+						<attributes>
+							<ObjectAttribute title="Haltbarkeit in Jahren"
+								text="{path: 'Haltbarkeit', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+						</attributes>
+						<firstStatus/>
+						<secondStatus/>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>
