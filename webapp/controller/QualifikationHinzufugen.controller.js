@@ -2,8 +2,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./QualiDialog",
 	"./utilities",
-	"sap/ui/core/routing/History"
-], function (BaseController, MessageBox, QualiDialog, Utilities, History) {
+	"sap/ui/core/routing/History",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+], function (BaseController, MessageBox, QualiDialog, Utilities, History, Filter, FilterOperator) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.zeitconsulting.prototypePlaceholderName.controller.QualifikationHinzufugen", {
@@ -46,7 +48,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				};
 				this.getView().bindObject(oPath);
 			}
-
 			this.aRadioButtonGroupIds = ["sap_Responsive_Page_0-content-sap_m_HBox-1550568095056-items-sap_m_RadioButtonGroup-1551080418612"];
 			this.handleRadioButtonGroupsSelectedIndex();
 			
@@ -69,10 +70,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 							oRadioButtonGroup.setSelectedIndex(iSelectedIndex);
 						}
 					});
-					
 				}
 			});
 		},
+		
 		_onPageNavButtonPress: function (oEvent) {
 
 			oEvent = jQuery.extend(true, {}, oEvent);
@@ -147,10 +148,39 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					return oButton.getText() === sTextValue;
 				});
 			}
-
 		},
-		_onRadioButtonGroupSelect: function () {
-
+		_onRadioButtonGroupSelect: function (oEvent) {
+			
+			var index = oEvent.getParameters().selectedIndex;
+			
+			var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
+			
+			var oBinding = oList.getBinding("items");
+			
+			var aFilter = [];
+			
+			var intern = "Intern";
+			var extern = "Extern";
+			var inex = "InternExtern";
+			
+			switch(index){
+				case 0:
+					aFilter.push(new Filter("InEx",FilterOperator.Contains, intern));
+					oBinding.filter(aFilter);
+					break;
+				case 1:
+					aFilter.push(new Filter("InEx",FilterOperator.Contains, extern));
+					oBinding.filter(aFilter);
+					break;
+				case 2:
+					aFilter.push(new Filter("InEx",FilterOperator.Contains, inex));
+					oBinding.filter(aFilter);
+					break;
+				case 3:
+					oBinding.filter(aFilter);
+					break;
+			}
+			
 		},
 		_onObjectListItemPress: function () {
 
@@ -192,6 +222,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					var iQuery = parseFloat(sQuery);
 					if (!isNaN(iQuery)) {
 						aFilters.push(new sap.ui.model.Filter("Haltbarkeit", sap.ui.model.FilterOperator.EQ, sQuery));
+						
 					}
 
 					aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery));
@@ -199,7 +230,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}
 				
 		
-				
 				var aFinalFilters = aFilters.length > 0 ? [new sap.ui.model.Filter(aFilters, false)] : [];
 				var oBindingOptions = this.updateBindingOptions(sControlId, {
 					filters: aFinalFilters

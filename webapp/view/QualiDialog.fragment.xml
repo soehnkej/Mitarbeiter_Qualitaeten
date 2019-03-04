@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core"
 	controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.QualiDialog" xmlns="sap.m">
-	<Dialog contentWidth="460px" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{ID}" type="Standard"
+	<Dialog contentWidth="460px" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{Vorname} {Nachname}" type="Standard"
 		verticalScrolling="true">
 		<content>
 			<Label text="Startdatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>

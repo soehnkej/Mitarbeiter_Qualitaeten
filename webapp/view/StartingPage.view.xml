@@ -4,7 +4,6 @@
 	<Page showHeader="true" title="Starting page" showFooter="true" showNavButton="false">
 		<content>
 			<Image src="/webapp/resources/starting_pic.png" height="576px" width="1280px" visible="true" densityAware="false"/>
-			
 		</content>
 		<footer>
 			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">

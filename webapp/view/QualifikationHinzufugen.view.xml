@@ -18,10 +18,10 @@
 					<RadioButtonGroup id="sap_Responsive_Page_0-content-sap_m_HBox-1550568095056-items-sap_m_RadioButtonGroup-1551080418612" columns="8"
 						selectedIndex="3" valueState="None" width="489px" editable="true" enabled="true" textDirection="Inherit" select="_onRadioButtonGroupSelect">
 						<buttons>
-							<RadioButton text="Intern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
-							<RadioButton text="Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
-							<RadioButton text="Intern / Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
-							<RadioButton text="Alle" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton id="buttonIntern" text="Intern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton id="buttonExtern" text="Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton id="buttonInEx" text="Intern / Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton id="buttonAlle" text="Alle" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
 						</buttons>
 					</RadioButtonGroup>
 				</items>
