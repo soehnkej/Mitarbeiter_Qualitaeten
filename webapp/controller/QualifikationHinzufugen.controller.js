@@ -152,28 +152,23 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		_onRadioButtonGroupSelect: function (oEvent) {
 			
 			var index = oEvent.getParameters().selectedIndex;
-			
 			var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
-			
 			var oBinding = oList.getBinding("items");
 			
 			var aFilter = [];
 			
-			var intern = "Intern";
-			var extern = "Extern";
-			var inex = "InternExtern";
 			
 			switch(index){
 				case 0:
-					aFilter.push(new Filter("InEx",FilterOperator.Contains, intern));
+					aFilter.push(new Filter("InEx",FilterOperator.Contains, "Intern"));
 					oBinding.filter(aFilter);
 					break;
 				case 1:
-					aFilter.push(new Filter("InEx",FilterOperator.Contains, extern));
+					aFilter.push(new Filter("InEx",FilterOperator.Contains, "Extern"));
 					oBinding.filter(aFilter);
 					break;
 				case 2:
-					aFilter.push(new Filter("InEx",FilterOperator.Contains, inex));
+					aFilter.push(new Filter("InEx",FilterOperator.Contains, "Intern/Extern"));
 					oBinding.filter(aFilter);
 					break;
 				case 3:

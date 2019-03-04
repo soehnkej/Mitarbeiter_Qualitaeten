@@ -45,7 +45,7 @@
 					</Toolbar>
 				</headerToolbar>
 				<items>
-					<ObjectListItem intro="" title="{ID}" number="{InEx}" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false">
+					<ObjectListItem intro="" title="{ID}" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false">
 						<attributes>
 							<ObjectAttribute title="Haltbarkeit in Jahren"
 								text="{path: 'Haltbarkeit', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
@@ -58,11 +58,6 @@
 		</content>
 		<footer>
 			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
-				<content>
-					<ToolbarSpacer width=""/>
-					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-				</content>
 			</OverflowToolbar>
 		</footer>
 		<headerContent/>
