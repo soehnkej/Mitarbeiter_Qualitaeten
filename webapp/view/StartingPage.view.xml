@@ -3,7 +3,7 @@
 	      xmlns="sap.m">
 	<Page showHeader="true" title="Starting page" showFooter="true" showNavButton="false">
 		<content>
-			<Image src="/webapp/resources/160121_smart-templates-overview_04.png" height="576px" width="1280px" visible="true" densityAware="false"/>
+			<Image src="/webapp/resources/starting_pic.png" height="576px" width="1280px" visible="true" densityAware="false"/>
 			
 		</content>
 		<footer>

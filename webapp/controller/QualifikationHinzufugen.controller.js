@@ -140,7 +140,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				return oButtonsBindingInfo.binding.getContexts(oButtonsBindingInfo.startIndex, oButtonsBindingInfo.length).findIndex(function (
 					oButtonContext) {
 					return oButtonContext.getProperty(sTextBindingPath) === sTextValue;
-					console.log(oButtonContext);
 				});
 			} else {
 				// look up index in static items
