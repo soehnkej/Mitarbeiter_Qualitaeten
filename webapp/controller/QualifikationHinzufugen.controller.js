@@ -176,6 +176,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					break;
 			}
 			
+			
 		},
 		_onObjectListItemPress: function () {
 
@@ -194,36 +195,52 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		_onSearchFieldLiveChange: function (oEvent) {
+			
+			
 			var sControlId = "sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299";
 			var oControl = this.getView().byId(sControlId);
-
+			
 			// Get the search query, regardless of the triggered event ('query' for the search event, 'newValue' for the liveChange one, 'value' for the liveChange of SelectDialogs).
 			var sQuery = oEvent.getParameter("query") || oEvent.getParameter("newValue") || oEvent.getParameter("value");
 			var sSourceId = oEvent.getSource().getId();
 			
 			
-
+			var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
+			var oBinding = oList.getBinding("items");
+			
+			
 			return new Promise(function (fnResolve) {
 				
-		
-				var aFinalFilters = [];
 
+				var aFinalFilters = [];
+				
 				var aFilters = [];
 				// 1) Search filters (with OR)
 				if (sQuery && sQuery.length > 0) {
-
-					aFilters.push(new sap.ui.model.Filter("ID", sap.ui.model.FilterOperator.Contains, sQuery));
+					
+					
+					if(this.byId("buttonIntern").getSelected()){
+						
+						//aFilters.push(new Filter("InEx",FilterOperator.Contains, "Intern"));
+						aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery && "InEx",FilterOperator.Contains, "Intern"));
+						aFilters.push(new sap.ui.model.Filter("ID", sap.ui.model.FilterOperator.Contains, sQuery && "InEx",FilterOperator.Contains, "Intern"));
+						aFilters.push(new sap.ui.model.Filter("Haltbarkeit", sap.ui.model.FilterOperator.EQ, sQuery && "InEx",FilterOperator.Contains, "Intern"));	
+						var iQuery = parseFloat(sQuery);
+						if (!isNaN(iQuery)) {
+					}
+						
+					}
+					
+				/*	aFilters.push(new sap.ui.model.Filter("ID", sap.ui.model.FilterOperator.Contains, sQuery));
 
 					var iQuery = parseFloat(sQuery);
 					if (!isNaN(iQuery)) {
 						aFilters.push(new sap.ui.model.Filter("Haltbarkeit", sap.ui.model.FilterOperator.EQ, sQuery));
-						
 					}
-
+					
 					aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery));
-
+					*/
 				}
-				
 		
 				var aFinalFilters = aFilters.length > 0 ? [new sap.ui.model.Filter(aFilters, false)] : [];
 				var oBindingOptions = this.updateBindingOptions(sControlId, {
@@ -246,6 +263,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					MessageBox.error(err.message);
 				}
 			});
+			
 		},
 		updateBindingOptions: function (sCollectionId, oBindingData, sSourceId) {
 			this.mBindingOptions = this.mBindingOptions || {};

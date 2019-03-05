@@ -24,7 +24,7 @@
 							<ObjectStatus text="{ID}" state="None" visible="true"/>
 						</firstStatus>
 						<secondStatus>
-							<ObjectStatus text="Musterfirma" state="None" visible="true"/>
+							<ObjectStatus text="{Firma}" state="None" visible="true"/>
 						</secondStatus>
 					</ObjectListItem>
 				</items>
