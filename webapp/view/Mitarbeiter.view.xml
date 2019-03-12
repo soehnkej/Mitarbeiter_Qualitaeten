@@ -21,7 +21,7 @@
 							<ObjectAttribute text="Firma:" active="false" visible="true"/>
 						</attributes>
 						<firstStatus>
-							<ObjectStatus text="{ID}" state="None" visible="true"/>
+							<ObjectStatus text="{MitarbeiterNr}" state="None" visible="true"/>
 						</firstStatus>
 						<secondStatus>
 							<ObjectStatus text="{Firma}" state="None" visible="true"/>

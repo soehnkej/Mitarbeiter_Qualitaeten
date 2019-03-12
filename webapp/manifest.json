@@ -10,21 +10,32 @@
 		"applicationVersion": {
 			"version": "1.2.2"
 		},
+		
 		"ach": "ach",
 		"resources": "resources.json",
+		
+		
+		
 		"dataSources": {
 			"local": {
-				"uri": "/here/goes/your/serviceUrl/local/",
+				"uri": "/sap/opu/odata/sap/ZMITQUAL_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
 					"localUri": "localService/metadata.xml"
 				}
+			},
+			"ZMITQUAL_SRV": {
+				"uri": "/sap/opu/odata/sap/ZMITQUAL_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
 			}
 		},
 		"sourceTemplate": {
-			"id": "sap.ui.ui5-template-plugin.2masterdetail",
-			"version": "1.32.5"
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
 		}
 	},
 	"sap.fiori": {
@@ -75,19 +86,14 @@
 				"uri": "i18n/i18n.properties"
 			},
 			"": {
-				"dataSource": "local",
 				"type": "sap.ui.model.odata.v2.ODataModel",
-				"preload": true,
 				"settings": {
-					"loadMetadataAsync": false,
-					"json": true,
-					"bJSON": true,
-					"defaultBindingMode": "TwoWay",
-					"defaultCountMode": "Inline",
-					"useBatch": true,
-					"refreshAfterChange": false,
-					"disableHeadRequestForToken": true
-				}
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "local",
+				"preload": true
 			}
 		},
 		"routing": {
@@ -136,42 +142,48 @@
 					"transition": "slide"
 				}
 			},
-			"routes": [{
-				"pattern": "Mitarbeiter/StartingPage",
-				"name": "StartingPage",
-				"target": [
-					"Mitarbeiter",
-					"StartingPage"
-				]
-			}, {
-				"pattern": "Mitarbeiter",
-				"name": "Mitarbeiter",
-				"target": [
-					"MitarbeiterDetail",
-					"Mitarbeiter"
-				]
-			}, {
-				"pattern": "Mitarbeiter/QualifikationHinzufugen/:context:",
-				"name": "QualifikationHinzufugen",
-				"target": [
-					"Mitarbeiter",
-					"QualifikationHinzufugen"
-				]
-			}, {
-				"pattern": "Mitarbeiter/MitarbeiterDetail/:context:",
-				"name": "MitarbeiterDetail",
-				"target": [
-					"Mitarbeiter",
-					"MitarbeiterDetail"
-				]
-			}, {
-				"pattern": "",
-				"name": "default",
-				"target": [
-					"StartingPage",
-					"Mitarbeiter"
-				]
-			}]
+			"routes": [
+				{
+					"pattern": "Mitarbeiter/StartingPage",
+					"name": "StartingPage",
+					"target": [
+						"Mitarbeiter",
+						"StartingPage"
+					]
+				},
+				{
+					"pattern": "Mitarbeiter",
+					"name": "Mitarbeiter",
+					"target": [
+						"MitarbeiterDetail",
+						"Mitarbeiter"
+					]
+				},
+				{
+					"pattern": "Mitarbeiter/QualifikationHinzufugen/:context:",
+					"name": "QualifikationHinzufugen",
+					"target": [
+						"Mitarbeiter",
+						"QualifikationHinzufugen"
+					]
+				},
+				{
+					"pattern": "Mitarbeiter/MitarbeiterDetail/:context:",
+					"name": "MitarbeiterDetail",
+					"target": [
+						"Mitarbeiter",
+						"MitarbeiterDetail"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"StartingPage",
+						"Mitarbeiter"
+					]
+				}
+			]
 		}
 	}
 }

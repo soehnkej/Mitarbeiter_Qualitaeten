@@ -2,7 +2,7 @@
 	controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.QualifikationHinzufugen" xmlns="sap.m">
 	<Page showHeader="true" title="Qualifikation hinzufügen" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
 		<content>
-			<ObjectHeader intro="" title="{Vorname} {Nachname}" icon="sap-icon://person-placeholder" number="{ID}" numberUnit="" numberState="None"
+			<ObjectHeader intro="" title="{Vorname} {Nachname}" icon="sap-icon://person-placeholder" number="{MitarbeiterNr}" numberUnit="" numberState="None"
 				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
 				<attributes>
 					<ObjectAttribute title="" text="{Firma}" active="false" visible="true"/>

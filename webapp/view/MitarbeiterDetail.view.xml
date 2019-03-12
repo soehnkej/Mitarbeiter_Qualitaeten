@@ -2,12 +2,12 @@
 	xmlns="sap.m" xmlns:layout="sap.ui.layout">
 	<Page title="" showHeader="true" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
 		<content>
-			<ObjectHeader intro="" title="{Vorname} {Nachname}" icon="sap-icon://person-placeholder" number="{ID}" numberUnit="" numberState="None"
+			<ObjectHeader intro="" title="{Vorname} {Nachname}" icon="sap-icon://person-placeholder" number="{MitarbeiterNr}" numberUnit="" numberState="None"
 				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
 				<attributes>
 					<ObjectAttribute title="" text="{Firma}" active="false" visible="true"/>
-					<ObjectAttribute title="" text="{Adresse} {Nummer}" active="false" visible="true"/>
-					<ObjectAttribute title="" text="{Postleitzahl} {Ort}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="{strasse} {Nummer}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="{Plz} {Ort}" active="false" visible="true"/>
 				</attributes>
 				<statuses/>
 				<markers/>

@@ -208,6 +208,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
 			var oBinding = oList.getBinding("items");
 			
+			var check = new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, "Intern");
+			
+			
 			
 			return new Promise(function (fnResolve) {
 				
@@ -218,29 +221,19 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				// 1) Search filters (with OR)
 				if (sQuery && sQuery.length > 0) {
 					
+			//	if(this.byId("buttonIntern").getSelected()){
 					
-					if(this.byId("buttonIntern").getSelected()){
-						
-						//aFilters.push(new Filter("InEx",FilterOperator.Contains, "Intern"));
-						aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery && "InEx",FilterOperator.Contains, "Intern"));
-						aFilters.push(new sap.ui.model.Filter("ID", sap.ui.model.FilterOperator.Contains, sQuery && "InEx",FilterOperator.Contains, "Intern"));
-						aFilters.push(new sap.ui.model.Filter("Haltbarkeit", sap.ui.model.FilterOperator.EQ, sQuery && "InEx",FilterOperator.Contains, "Intern"));	
-						var iQuery = parseFloat(sQuery);
-						if (!isNaN(iQuery)) {
-					}
-						
-					}
-					
-				/*	aFilters.push(new sap.ui.model.Filter("ID", sap.ui.model.FilterOperator.Contains, sQuery));
+
+					aFilters.push(new sap.ui.model.Filter("ID", sap.ui.model.FilterOperator.Contains, sQuery));
 
 					var iQuery = parseFloat(sQuery);
 					if (!isNaN(iQuery)) {
 						aFilters.push(new sap.ui.model.Filter("Haltbarkeit", sap.ui.model.FilterOperator.EQ, sQuery));
 					}
 					
-					aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery));
-					*/
+					aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery ));
 				}
+				//}
 		
 				var aFinalFilters = aFilters.length > 0 ? [new sap.ui.model.Filter(aFilters, false)] : [];
 				var oBindingOptions = this.updateBindingOptions(sControlId, {
@@ -272,6 +265,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var aSorters = this.mBindingOptions[sCollectionId].sorters;
 			var aGroupby = this.mBindingOptions[sCollectionId].groupby;
 
+		
 			// If there is no oBindingData parameter, we just need the processed filters and sorters from this function
 			if (oBindingData) {
 				if (oBindingData.sorters) {
