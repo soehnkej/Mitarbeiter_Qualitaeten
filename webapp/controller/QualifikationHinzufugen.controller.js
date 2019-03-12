@@ -151,14 +151,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		},
 		_onRadioButtonGroupSelect: function (oEvent) {
 			
-			var index = oEvent.getParameters().selectedIndex;
+		/*	var index = oEvent.getParameters().selectedIndex;
 			var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
 			var oBinding = oList.getBinding("items");
 			
 			var aFilter = [];
+			*/
 			
-			
-			switch(index){
+		/*	switch(index){
 				case 0:
 					aFilter.push(new Filter("InEx",FilterOperator.Contains, "Intern"));
 					oBinding.filter(aFilter);
@@ -174,7 +174,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				case 3:
 					oBinding.filter(aFilter);
 					break;
-			}
+			}*/
 			
 			
 		},

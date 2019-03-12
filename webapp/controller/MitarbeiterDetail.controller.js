@@ -32,11 +32,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					
 					//this.sContext ist der zu dem Zeitpunkt des anklickens ausgewählte Mitarbeiter
 					this.sContext = patternConvert(this.getOwnerComponent().getComponentData().startupParameters);
-
+					
 				}
 			}
-
-
+			
+	
 			var oPath;
 
 			if (this.sContext) {
@@ -46,6 +46,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				};
 				this.getView().bindObject(oPath);
 			}
+			
 
 		},
 		_onPageNavButtonPress: function (oEvent) {
@@ -207,8 +208,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oBindingData = {};
 			oBindingData.filters = [];
 			aPropertyFilters = [];
-
-			aPropertyFilters.push(new sap.ui.model.Filter("Mit_ID", "EQ", "928828"));
+			
+			//"928828"
+			aPropertyFilters.push(new sap.ui.model.Filter("MitarbeiterNr", "EQ", this.sContext));
 			oBindingData.filters.push(new sap.ui.model.Filter(aPropertyFilters, false));
 
 			this.updateBindingOptions("sap_IconTabBar_Page_0-content-sap_m_ObjectList-1549961427799-9rcfkv91abxasg9ckj7q6kk95_S5", oBindingData);

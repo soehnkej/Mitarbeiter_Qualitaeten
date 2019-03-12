@@ -6,8 +6,8 @@
 				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
 				<attributes>
 					<ObjectAttribute title="" text="{Firma}" active="false" visible="true"/>
-					<ObjectAttribute title="" text="{Adresse} {Nummer}" active="false" visible="true"/>
-					<ObjectAttribute title="" text="{Postleitzahl} {Ort}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="{Strasse} {Nummer}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="{Plz} {Ort}" active="false" visible="true"/>
 				</attributes>
 				<statuses/>
 				<markers/>
@@ -45,7 +45,7 @@
 					</Toolbar>
 				</headerToolbar>
 				<items>
-					<ObjectListItem intro="" title="{ID}" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false">
+					<ObjectListItem intro="" title="{Qual_ID}" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false">
 						<attributes>
 							<ObjectAttribute title="Haltbarkeit in Jahren"
 								text="{path: 'Haltbarkeit', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>

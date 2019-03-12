@@ -196,9 +196,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		_onObjectListItemPress: function (oEvent) {
-
+			
+			//var aPropertyFilters;
 			var oBindingContext = oEvent.getParameter("listItem").getBindingContext();
-
+			
+			//aPropertyFilters = [];
+			// aPropertyFilters.push(new sap.ui.model.Filter("MitarbeiterNr", "EQ", this.sContext));
 			return new Promise(function (fnResolve) {
 				this.doNavigate("MitarbeiterDetail", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function (err) {

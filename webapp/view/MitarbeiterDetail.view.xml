@@ -6,7 +6,7 @@
 				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
 				<attributes>
 					<ObjectAttribute title="" text="{Firma}" active="false" visible="true"/>
-					<ObjectAttribute title="" text="{strasse} {Nummer}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="{Strasse} {Nummer}" active="false" visible="true"/>
 					<ObjectAttribute title="" text="{Plz} {Ort}" active="false" visible="true"/>
 				</attributes>
 				<statuses/>
@@ -14,7 +14,7 @@
 			</ObjectHeader>
 			<List id="sap_IconTabBar_Page_0-content-sap_m_ObjectList-1549961427799-9rcfkv91abxasg9ckj7q6kk95_S5" mode="SingleSelectMaster"
 				width="955.00000000px" headerText="Qualifikationen" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
-				growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path:'/Mit_QualSet', templateShareable:true}">
+				growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path:'/MitarbeiterqualifikationenSet', templateShareable:true}">
 				<infoToolbar>
 					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 						<content>
@@ -24,18 +24,22 @@
 				</infoToolbar>
 				<headerToolbar/>
 				<items>
-					<ObjectListItem intro="" title="{Qual_ID}" icon="" number="{Qual_ID}" numberUnit="" numberState="None" type="Active" selected="false"
+					<ObjectListItem intro="" title="" icon="" number="{QualID}" numberUnit="" numberState="None" type="Active" selected="false"
 						showMarkers="false">
 						<attributes>
+							<ObjectAttribute title="Anfangsdatum" text="" active="false" visible="true"/>
 							<ObjectAttribute title="Ablaufdatum" text="" active="false" visible="true"/>
 							<ObjectAttribute text="Allgemeine Haltbarkeit" active="false" visible="true"/>
 						</attributes>
 						<firstStatus>
-							<ObjectStatus title="" text="23. April 2022" state="None" visible="true"/>
+							<ObjectStatus title="" text="{VonDatum}" state="None" visible="true"/>
 						</firstStatus>
 						<secondStatus>
-							<ObjectStatus title="Jahre" text="3 Jahre" state="None" visible="true"/>
+							<ObjectStatus title="" text="{BisDatum}" state="None" visible="true"/>
 						</secondStatus>
+					<!-- <ObjectStatus title="Jahre" text="{Geltungsdauer}" state="None" visible="true"/> -->
+							
+						
 					</ObjectListItem>
 				</items>
 			</List>
