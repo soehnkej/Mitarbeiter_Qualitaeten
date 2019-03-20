@@ -10,26 +10,22 @@
 		"applicationVersion": {
 			"version": "1.2.2"
 		},
-		
 		"ach": "ach",
 		"resources": "resources.json",
-		
-		
-		
 		"dataSources": {
 			"local": {
-				"uri": "/sap/opu/odata/sap/ZMITQUAL_SRV/",
+				"uri": "/sap/opu/odata/sap/ZTR_MA_QUAL_ODATA_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
 					"localUri": "localService/metadata.xml"
 				}
 			},
-			"ZMITQUAL_SRV": {
-				"uri": "/sap/opu/odata/sap/ZMITQUAL_SRV/",
+			"ZTR_MA_QUAL_ODATA_SRV": {
+				"uri": "/sap/opu/odata/sap/ZTR_MA_QUAL_ODATA_SRV/",
 				"type": "OData",
 				"settings": {
-					"localUri": "localService/metadata.xml"
+					"localUri": "localService/ZTR_MA_QUAL_ODATA_SRV/metadata.xml"
 				}
 			}
 		},
@@ -92,7 +88,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "local",
+				"dataSource": "ZTR_MA_QUAL_ODATA_SRV",
 				"preload": true
 			}
 		},

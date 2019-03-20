@@ -2,12 +2,12 @@
 	controllerName="com.sap.build.zeitconsulting.prototypePlaceholderName.controller.QualifikationHinzufugen" xmlns="sap.m">
 	<Page showHeader="true" title="Qualifikation hinzufügen" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
 		<content>
-			<ObjectHeader intro="" title="{Vorname} {Nachname}" icon="sap-icon://person-placeholder" number="{MitarbeiterNr}" numberUnit="" numberState="None"
+			<ObjectHeader intro="" title="{Vorname} {Name}" icon="sap-icon://person-placeholder" number="{Id}" numberUnit="" numberState="None"
 				titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
 				<attributes>
 					<ObjectAttribute title="" text="{Firma}" active="false" visible="true"/>
-					<ObjectAttribute title="" text="{Strasse} {Nummer}" active="false" visible="true"/>
-					<ObjectAttribute title="" text="{Plz} {Ort}" active="false" visible="true"/>
+					<ObjectAttribute title="" text="" active="false" visible="true"/>
+					<ObjectAttribute title="" text="" active="false" visible="true"/>
 				</attributes>
 				<statuses/>
 				<markers/>
@@ -20,7 +20,7 @@
 						<buttons>
 							<RadioButton id="buttonIntern" text="Intern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
 							<RadioButton id="buttonExtern" text="Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
-							<RadioButton id="buttonInEx" text="Intern / Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+							<RadioButton id="buttonInEx" text="Intern und Extern" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
 							<RadioButton id="buttonAlle" text="Alle" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
 						</buttons>
 					</RadioButtonGroup>
@@ -45,10 +45,12 @@
 					</Toolbar>
 				</headerToolbar>
 				<items>
-					<ObjectListItem intro="" title="{Qual_ID}" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false">
+					<ObjectListItem intro="" title="{Bezeichnung}" numberUnit="" numberState="None" type="Active" selected="true" showMarkers="false">
 						<attributes>
-							<ObjectAttribute title="Haltbarkeit in Jahren"
-								text="{path: 'Haltbarkeit', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+								<ObjectAttribute title="Haltbarkeit in Jahren"
+								text="{Geltungsdauer}" active="false" visible="true"/>
+								<ObjectAttribute title="Geltungsbereich"
+								text="{Geltungsbereich}" active="false" visible="true"/>
 						</attributes>
 						<firstStatus/>
 						<secondStatus/>

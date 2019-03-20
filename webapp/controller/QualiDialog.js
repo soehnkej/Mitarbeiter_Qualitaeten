@@ -102,11 +102,24 @@ sap.ui.define([
 					}
 				});
 		},
+		onCreateButton: function(oEvent){
+			
+			var oBindingContext = oEvent.getSource().getBindingContext();
+			var sPath = (oBindingContext) ? oBindingContext.getPath() : null;
+			var oModel = (oBindingContext) ? oBindingContext.getModel() : null;
+			
+			var vonDatum = this.byId("vonDate");
+
+			
+			
+			
+		},
 		onInit: function () {
 
 			this._oDialog = this.getControl();
-
 			this.oModel = this.getOwnerComponent().getModel();
+			
+			
 
 		},
 		onExit: function () {

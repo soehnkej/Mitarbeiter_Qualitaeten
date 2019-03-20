@@ -3,14 +3,14 @@
 	<Dialog contentWidth="25rem" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Qualifikation hinzufügen" type="Standard"
 		verticalScrolling="true">
 		<content>
-			<Label text="Startdatum" design="Standard" width="100%" required="false" textAlign="Left" textDirection="Inherit" visible="true"/>
-			<DatePicker width="100%" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
-			<Label text="Enddatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-			<DatePicker width="100%" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+				<Label text="Startdatum" design="Standard" width="100%" required="false" textAlign="Left" textDirection="Inherit" visible="true"/>
+				<DatePicker id="vonDate" width="100%" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+				<Label text="Enddatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+				<DatePicker id="bisDate" width="100%" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
 		</content>
 		<beginButton/>
 		<buttons>
-			<Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+			<Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="onCreateButton"/>
 			<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
 				press="_onButtonPress"/>
 		</buttons>

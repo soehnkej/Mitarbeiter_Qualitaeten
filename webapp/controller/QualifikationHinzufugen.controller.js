@@ -55,8 +55,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		handleRadioButtonGroupsSelectedIndex: function () {
 			var that = this;
 			
-			
-			
 			this.aRadioButtonGroupIds.forEach(function (sRadioButtonGroupId) {
 				var oRadioButtonGroup = that.byId(sRadioButtonGroupId);
 				var oButtonsBinding = oRadioButtonGroup ? oRadioButtonGroup.getBinding("buttons") : undefined;
@@ -150,33 +148,32 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 		},
 		_onRadioButtonGroupSelect: function (oEvent) {
+
 			
-		/*	var index = oEvent.getParameters().selectedIndex;
+			var index = oEvent.getParameters().selectedIndex;
 			var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
 			var oBinding = oList.getBinding("items");
-			
+
 			var aFilter = [];
-			*/
 			
-		/*	switch(index){
+			
+			switch(index){
 				case 0:
-					aFilter.push(new Filter("InEx",FilterOperator.Contains, "Intern"));
+					aFilter.push(new Filter("Vergabe",FilterOperator.Contains, "Intern"));
 					oBinding.filter(aFilter);
 					break;
 				case 1:
-					aFilter.push(new Filter("InEx",FilterOperator.Contains, "Extern"));
+					aFilter.push(new Filter("Vergabe",FilterOperator.Contains, "Extern"));
 					oBinding.filter(aFilter);
 					break;
 				case 2:
-					aFilter.push(new Filter("InEx",FilterOperator.Contains, "Intern/Extern"));
+					aFilter.push(new Filter("Vergabe",FilterOperator.Contains, "Intern und Extern"));
 					oBinding.filter(aFilter);
 					break;
 				case 3:
 					oBinding.filter(aFilter);
 					break;
-			}*/
-			
-			
+			}
 		},
 		_onObjectListItemPress: function () {
 
@@ -205,14 +202,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var sSourceId = oEvent.getSource().getId();
 			
 			
-			var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
-			var oBinding = oList.getBinding("items");
+			 var oList = this.byId("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299");
+			 var oBinding = oList.getBinding("items");
 			
-			var check = new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, "Intern");
+			// var check = new sap.ui.model.Filter("Vergabe", sap.ui.model.FilterOperator.Contains, "Intern");
 			
 			
 			
 			return new Promise(function (fnResolve) {
+				
 				
 
 				var aFinalFilters = [];
@@ -224,14 +222,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			//	if(this.byId("buttonIntern").getSelected()){
 					
 
-					aFilters.push(new sap.ui.model.Filter("ID", sap.ui.model.FilterOperator.Contains, sQuery));
+					aFilters.push(new sap.ui.model.Filter("Id", sap.ui.model.FilterOperator.Contains, sQuery));
 
 					var iQuery = parseFloat(sQuery);
 					if (!isNaN(iQuery)) {
-						aFilters.push(new sap.ui.model.Filter("Haltbarkeit", sap.ui.model.FilterOperator.EQ, sQuery));
+						aFilters.push(new sap.ui.model.Filter("Geltungsdauer", sap.ui.model.FilterOperator.EQ, sQuery));
 					}
 					
-					aFilters.push(new sap.ui.model.Filter("InEx", sap.ui.model.FilterOperator.Contains, sQuery ));
+					aFilters.push(new sap.ui.model.Filter("Vergabe", sap.ui.model.FilterOperator.Contains, sQuery ));
+					
+					
 				}
 				//}
 		
@@ -304,9 +304,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var oBindingData, aPropertyFilters;
 			oBindingData = {};
 			oBindingData.sorters = [];
-
-			oBindingData.sorters.push(new sap.ui.model.Sorter("ID", false, false));
-			oBindingData.groupby = [new sap.ui.model.Sorter("InEx", false, true)];
+			
+			// oBindingData.sorters.push(new sap.ui.model.Sorter("Id", false, false));
+			 oBindingData.groupby = [new sap.ui.model.Sorter("Vergabe", false, true)];
 
 			this.updateBindingOptions("sap_Responsive_Page_0-content-sap_m_ObjectList-1551080890299", oBindingData);
 

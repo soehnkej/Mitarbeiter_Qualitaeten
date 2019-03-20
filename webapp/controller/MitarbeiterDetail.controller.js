@@ -2,8 +2,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
 	"sap/ui/core/routing/History",
-	"sap/ui/model/json/JSONModel"
-], function (BaseController, MessageBox, Utilities, History) {
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+], function (BaseController, MessageBox, Utilities, History, Filter, FilterOperator) {
 	"use strict";
 	
 	return BaseController.extend("com.sap.build.zeitconsulting.prototypePlaceholderName.controller.MitarbeiterDetail", {
@@ -36,7 +38,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}
 			}
 			
-	
+		
 			var oPath;
 
 			if (this.sContext) {
@@ -47,9 +49,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				this.getView().bindObject(oPath);
 			}
 			
+			
+			
 
 		},
 		_onPageNavButtonPress: function (oEvent) {
+			
+			
 
 			oEvent = jQuery.extend(true, {}, oEvent);
 			return new Promise(function (fnResolve) {
@@ -108,7 +114,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var sMasterContext = this.sMasterContext ? this.sMasterContext : sPath;
 
 			if (sEntityNameSet !== null) {
-				sNavigationPropertyName = sViaRelation || this.getOwnerComponent().getNavigationPropertyForNavigationWithContext(sEntityNameSet,
+				sNavigationPropertyName =  this.getOwnerComponent().getNavigationPropertyForNavigationWithContext(sEntityNameSet,
 					sRouteName);
 			}
 			if (sNavigationPropertyName !== null && sNavigationPropertyName !== undefined) {
@@ -168,6 +174,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			var aSorters = this.mBindingOptions[sCollectionId].sorters;
 			var aGroupby = this.mBindingOptions[sCollectionId].groupby;
+			
 
 			// If there is no oBindingData parameter, we just need the processed filters and sorters from this function
 			if (oBindingData) {
@@ -209,10 +216,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oBindingData.filters = [];
 			aPropertyFilters = [];
 			
-			//"928828"
-			aPropertyFilters.push(new sap.ui.model.Filter("MitarbeiterNr", "EQ", this.sContext));
+			
+			aPropertyFilters.push(new sap.ui.model.Filter("Id", "EQ", this.sContext));
+			
+			
 			oBindingData.filters.push(new sap.ui.model.Filter(aPropertyFilters, false));
-
+			
 			this.updateBindingOptions("sap_IconTabBar_Page_0-content-sap_m_ObjectList-1549961427799-9rcfkv91abxasg9ckj7q6kk95_S5", oBindingData);
 
 		},
@@ -232,7 +241,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				sorter: oBindingOptions.sorters,
 				filters: oBindingOptions.filters
 			});
-
 		},
 		onInit: function () {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -258,7 +266,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.createFiltersAndSorters();
 
 			this.applyFiltersAndSorters("sap_IconTabBar_Page_0-content-sap_m_ObjectList-1549961427799-9rcfkv91abxasg9ckj7q6kk95_S5", "items");
-
+			//var aPropertyFilters = [];
+			
+			// aPropertyFilters.push(new sap.ui.model.Filter("MitarbeiterNr", "EQ", this.sContext));
+		
 		},
 		onExit: function () {
 
